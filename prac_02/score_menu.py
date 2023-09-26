@@ -1,15 +1,15 @@
 def main():
-    print("(G)et a valid (P)rint result (S)how stars (Q)uit")
+    """Get a score print results and stars"""
+    print("(G)et a valid score (P)rint result (S)how stars (Q)uit")
     choice = input(">>> ").upper()
     while choice != "Q":
         if choice == "G":
-            score = float(input("Enter score: "))
-            get_result(score)
+            score = int(input("Enter score: "))
+            print(get_result(score))
         elif choice == "P":
             result = get_result(score)
             print(result)
         elif choice == "S":
-            score = int(input("Enter score: "))
             print_asterisks(score)
         print("(G)et a valid (P)rint result (S)how stars (Q)uit")
         choice = input(">>> ").upper()
@@ -17,6 +17,7 @@ def main():
 
 
 def get_result(score):
+    """Get result from score"""
     if score > 100:
         return "Invalid Score"
     elif score >= 90:
@@ -30,6 +31,7 @@ def get_result(score):
 
 
 def print_asterisks(score):
+    """Display line of stars"""
     print("*" * score)
 
 
