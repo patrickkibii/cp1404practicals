@@ -17,8 +17,7 @@ with open('numbers.txt', 'r') as in_file:
     total = int(numbers[0]) + int(numbers[1])
     print(f"Total: {total}")
 
-
-#4
+# 4
 
 in_file = open('numbers.txt', 'r')
 for line in in_file:

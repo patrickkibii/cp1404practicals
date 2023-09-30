@@ -8,3 +8,5 @@ On day 7 price is: $38.48
 On day 8 price is: $79.41
 On day 9 price is: $76.55
 On day 10 price is: $162.39
+
+
