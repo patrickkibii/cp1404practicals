@@ -20,8 +20,8 @@
 # with open(name, "w") as out_file:
 #     print(name)
 
-filename = 'usernames.txt'
-in_file = open(filename, 'r')
+# filename = 'usernames.txt'
+# in_file = open(filename, 'r')
 # for line in in_file:
 #     if line[0] == '#':
 #         print("Mark down file : Heading 1 ")
@@ -30,8 +30,24 @@ in_file = open(filename, 'r')
 #         print(f"Good morning {line}")
 
 
-print(in_file.read(100))
+# print(in_file.read(100))
 
+
+# x = str(int('1.0'))
+# x[-1] = '2'
+# x = str(1.0)
+# x[-1] = '2'
+try:
+    x = int("zero")
+    print(10 / x)
+except ZeroDivisionError:
+    print("div")
+except NameError:
+    print("name")
+except ValueError:
+    print("value")
+except:
+    print("other")
 
 
 
