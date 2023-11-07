@@ -11,11 +11,12 @@ class Project:
 
     def __str__(self):
         """Return string representation of project."""
-        return f"{self.name}, start: {self.start_date}, priority {self.priority}, estimate: {self.cost_estimate}, completion: {self.completion}"
+        return (f"{self.name}, start: {self.start_date}, priority {self.priority}, estimate: {self.cost_estimate}, "
+                f"completion: {self.completion}")
 
     def __lt__(self, other):
         # Implement comparison for sorting based on priority
-        pass
+        return self.priority < other
 
     def is_complete(self):
         return self.completion == 100

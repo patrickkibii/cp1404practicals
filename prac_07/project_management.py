@@ -15,7 +15,7 @@ def main():
             display_menu()
             choice = input(">>> ").lower()
         elif choice == "s":
-
+            save_projects(projects)
             display_menu()
             choice = input(">>> ").lower()
         elif choice == "d":
@@ -23,11 +23,11 @@ def main():
             display_menu()
             choice = input(">>> ").lower()
         elif choice == "f":
-
+            filter_projects_by_date()
             display_menu()
             choice = input(">>> ").lower()
         elif choice == "a":
-
+            add_project(projects)
             display_menu()
             choice = input(">>> ").lower()
         elif choice == "u":
@@ -38,10 +38,7 @@ def main():
             print("Invalid menu choice")
             print("Menu:\nD - Display songs\nA - Add new song\nC - Complete a song\nQ - Quit")
             choice = input(">>>").lower()
-    # save_songs(songs, FILENAME)
-    # print(f"{len(songs)} songs loaded")
-    # print("Make some music!!!")
-    # display_songs(songs)
+    print("Thank you for using custom-built project management software.")
 
 
 def display_menu():
@@ -72,8 +69,12 @@ def load_projects(filename):
     #     print(line)
 
 
-def save_projects():
-    pass
+def save_projects(projects):
+    """Write projects to a file"""
+    filename = input("Input File Name to Save to: ")
+    with open(filename, "w", newline="") as out_file:
+        for project in projects:
+            print(project, file=out_file)
 
 
 def display_projects(filename):
@@ -96,11 +97,29 @@ def display_projects(filename):
 
 
 def filter_projects_by_date():
-    pass
+    # date_input = input("Show projects that start after date (dd/mm/yy): ")
+    # x = date_input.strip().split('/')
+    # filter_date = int(x[0]), int(x[1]), int(x[2])
+    # print(filter_date)
+    # import datetime
+
+    date_string = input("Date (d/m/yyyy): ")  # e.g., "30/9/2022"
+    date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
+    print(f"That day is/was {date.strftime('%A')}")
+    print(date.strftime("%d/%m/%Y"))
 
 
-def add_project():
+def add_project(projects):
     print("Let's add a new project")
+    name = input("Name: ")
+    start_date = input("Start Date: ")
+    priority = input("Priority: ")
+    cost_estimate = input("Cost estimate: ")
+    completion = input("Percent Complete: ")
+    # Project(name, start_date, priority, cost_estimate, completion)
+    # projects.append(Project)
+    project = Project(name, start_date, int(priority), float(cost_estimate), int(completion))
+    projects.append(project)
 
 
 def update_project(projects):
@@ -117,3 +136,4 @@ def update_project(projects):
 
 
 main()
+# filter_projects_by_date()
